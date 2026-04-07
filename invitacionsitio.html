@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000;
+    }
+
+    .contenedor {
+      position: relative;
+      width: 100%;
+      max-width: 500px; /* ajusta según tu imagen */
+    }
+
+    .imagen {
+      width: 100%;
+      display: block;
+    }
+
+    .boton {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px; /* ajusta al tamaño de tu botón */
+      cursor: pointer;
+    }
+
+    .oculto {
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      .boton {
+        width: 90px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="contenedor" id="pantalla1">
+    <!-- Imagen del sobre -->
+    <img src="sobre.jpg" class="imagen" alt="Sobre">
+
+    <!-- Botón encima -->
+    <img src="boton.png" class="boton" onclick="abrirInvitacion()" alt="Abrir">
+  </div>
+
+  <div class="contenedor oculto" id="pantalla2">
+    <!-- Imagen de la invitación -->
+    <img src="invitacion.jpg" class="imagen" alt="Invitación">
+  </div>
+
+  <script>
+    function abrirInvitacion() {
+      document.getElementById("pantalla1").classList.add("oculto");
+      document.getElementById("pantalla2").classList.remove("oculto");
+    }
+  </script>
+
+</body>
+</html>
